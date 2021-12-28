@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "rm -rf dist && parcel build index.html --no-minify --public-url ./"
+  },
   "devDependencies": {
     "typescript": "^4.5.4"
   }

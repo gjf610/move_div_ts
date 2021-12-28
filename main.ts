@@ -1,19 +1,19 @@
-var div = document.createElement('div')
+var div: HTMLDivElement = document.createElement('div')
 div.style.border = '1px solid red'
 div.style.height = '100px'
 div.style.width = '100px'
 div.style.top = 'auto'
 div.id = 'demo'
-
 document.body.appendChild(div)
-var x = false
-var position = [0, 0]
-div.onmousedown = ({ clientX, clientY }) => {
-  x = true
 
+var x: boolean = false
+var position: [number, number] = [0, 0]
+
+div.onmousedown = ({ clientX, clientY }: MouseEvent) => {
+  x = true
   position = [clientX, clientY]
 }
-document.onmousemove = ({ clientX, clientY }) => {
+document.onmousemove = ({ clientX, clientY }: MouseEvent) => {
   if (x === true) {
     var deltaX = clientX - position[0]
     var deltaY = clientY - position[1]
@@ -25,6 +25,6 @@ document.onmousemove = ({ clientX, clientY }) => {
   }
 
 }
-document.onmouseup = (e) => {
+document.onmouseup = (e: MouseEvent) => {
   x = false
 }
